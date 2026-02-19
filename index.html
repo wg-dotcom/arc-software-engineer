@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senior Software Engineer Selection | Curated for ARC by ChargeItSpot</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --arc-gold: #FABE32;
+            --arc-gold-soft: #FCD06A;
+            --arc-gold-deep: #E5A820;
+            --arc-dark: #272727;
+            --arc-darker: #1A1A1A;
+            --arc-darkest: #13151A;
+            --arc-white: #FFFFFF;
+            --arc-light: #F7F7F7;
+            --arc-gray: #6B7280;
+            --arc-gray-light: #E5E7EB;
+            --arc-teal: #2A9D8F;
+            --arc-blue: #3B82F6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            color: var(--arc-darkest);
+            background: var(--arc-white);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ===== HEADER / HERO ===== */
+        .hero {
+            background: var(--arc-darker);
+            color: var(--arc-white);
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-top-bar {
+            background: var(--arc-gold);
+            height: 4px;
+            width: 100%;
+        }
+
+        .hero-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 40px 70px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-brand {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 50px;
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards;
+        }
+
+        .hero-brand .logo-text {
+            font-size: 38px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            color: var(--arc-white);
+        }
+
+        .hero-brand .logo-accent {
+            width: 36px;
+            height: 3px;
+            background: var(--arc-gold);
+            border-radius: 2px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(250, 190, 50, 0.12);
+            border: 1px solid rgba(250, 190, 50, 0.3);
+            color: var(--arc-gold);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 8px 20px;
+            border-radius: 100px;
+            margin-bottom: 28px;
+            opacity: 0;
+            animation: fadeUp 0.8s ease 0.15s forwards;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 300;
+            line-height: 1.2;
+            letter-spacing: -1.5px;
+            margin-bottom: 24px;
+            opacity: 0;
+            animation: fadeUp 0.8s ease 0.3s forwards;
+        }
+
+        .hero h1 strong {
+            font-weight: 700;
+        }
+
+        .hero-subtitle {
+            font-size: 17px;
+            color: rgba(255, 255, 255, 0.65);
+            max-width: 640px;
+            line-height: 1.7;
+            opacity: 0;
+            animation: fadeUp 0.8s ease 0.45s forwards;
+        }
+
+        .hero-meta {
+            display: flex;
+            gap: 40px;
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            opacity: 0;
+            animation: fadeUp 0.8s ease 0.6s forwards;
+            flex-wrap: wrap;
+        }
+
+        .hero-meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .hero-meta-label {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--arc-gold);
+        }
+
+        .hero-meta-value {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* ===== EDITORIAL INTRO ===== */
+        .editorial {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+
+        .editorial-label {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--arc-gold-deep);
+            margin-bottom: 20px;
+        }
+
+        .editorial h2 {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 28px;
+            color: var(--arc-darkest);
+        }
+
+        .editorial p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--arc-gray);
+            margin-bottom: 20px;
+        }
+
+        .editorial p strong {
+            color: var(--arc-darkest);
+            font-weight: 600;
+        }
+
+        .editorial-divider {
+            width: 48px;
+            height: 3px;
+            background: var(--arc-gold);
+            border-radius: 2px;
+            margin: 48px 0;
+        }
+
+        /* ===== CANDIDATE CARDS ===== */
+        .candidates-section {
+            background: var(--arc-light);
+            padding: 80px 0;
+        }
+
+        .candidates-header {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 40px;
+            margin-bottom: 56px;
+        }
+
+        .candidates-header h2 {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 12px;
+        }
+
+        .candidates-header p {
+            font-size: 16px;
+            color: var(--arc-gray);
+        }
+
+        .candidate-card {
+            max-width: 1100px;
+            margin: 0 auto 40px;
+            padding: 0 40px;
+        }
+
+        .card {
+            background: var(--arc-white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 8px 32px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 12px 48px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-top {
+            background: var(--arc-darker);
+            padding: 36px 44px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .card-identity {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .card-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: rgba(250, 190, 50, 0.15);
+            border: 2px solid rgba(250, 190, 50, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--arc-gold);
+            flex-shrink: 0;
+        }
+
+        .card-name {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--arc-white);
+            letter-spacing: -0.3px;
+        }
+
+        .card-title {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 3px;
+        }
+
+        .card-meta-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 10px;
+        }
+
+        .card-location {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .card-location::before {
+            content: '◎';
+            color: var(--arc-gold);
+            font-size: 11px;
+        }
+
+        .card-salary {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--arc-gold);
+            background: rgba(250, 190, 50, 0.1);
+            border: 1px solid rgba(250, 190, 50, 0.25);
+            padding: 4px 12px;
+            border-radius: 100px;
+        }
+
+        .card-body {
+            padding: 40px 44px;
+        }
+
+        .card-narrative {
+            font-size: 15.5px;
+            line-height: 1.85;
+            color: var(--arc-gray);
+            margin-bottom: 32px;
+        }
+
+        .card-narrative strong {
+            color: var(--arc-darkest);
+            font-weight: 600;
+        }
+
+        .card-narrative em {
+            color: var(--arc-dark);
+            font-style: normal;
+            font-weight: 500;
+        }
+
+        /* ===== SIGNAL TAGS ===== */
+        .signal-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 32px;
+        }
+
+        .signal-tag {
+            font-size: 11.5px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            padding: 5px 12px;
+            border-radius: 6px;
+            background: #F0FDF4;
+            color: #166534;
+            border: 1px solid #BBF7D0;
+        }
+
+        .signal-tag.blue {
+            background: #EFF6FF;
+            color: #1D4ED8;
+            border-color: #BFDBFE;
+        }
+
+        .signal-tag.amber {
+            background: rgba(250, 190, 50, 0.08);
+            color: #92400E;
+            border-color: rgba(250, 190, 50, 0.3);
+        }
+
+        .signal-tag.gray {
+            background: #F9FAFB;
+            color: #374151;
+            border-color: #E5E7EB;
+        }
+
+        /* ===== TWO-COL STATS ===== */
+        .card-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .stat-box {
+            background: var(--arc-light);
+            border-radius: 10px;
+            padding: 16px 20px;
+        }
+
+        .stat-label {
+            font-size: 10.5px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--arc-gray);
+            margin-bottom: 6px;
+        }
+
+        .stat-value {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--arc-darkest);
+        }
+
+        /* ===== PROFILE LINK ===== */
+        .card-footer {
+            border-top: 1px solid var(--arc-gray-light);
+            padding: 20px 44px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .card-footer-note {
+            font-size: 13px;
+            color: var(--arc-gray);
+        }
+
+        .profile-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--arc-darkest);
+            text-decoration: none;
+            padding: 8px 18px;
+            border: 1.5px solid var(--arc-gray-light);
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .profile-link:hover {
+            border-color: var(--arc-gold);
+            color: var(--arc-gold-deep);
+            background: rgba(250, 190, 50, 0.04);
+        }
+
+        .profile-link svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        /* ===== CLOSING NOTE ===== */
+        .closing {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+
+        .closing h2 {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 20px;
+        }
+
+        .closing p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--arc-gray);
+            margin-bottom: 20px;
+        }
+
+        .closing p strong {
+            color: var(--arc-darkest);
+        }
+
+        .contact-block {
+            margin-top: 40px;
+            padding: 32px 36px;
+            background: var(--arc-darker);
+            border-radius: 16px;
+            color: var(--arc-white);
+        }
+
+        .contact-block p {
+            color: rgba(255,255,255,0.6);
+            font-size: 14px;
+            margin-bottom: 6px;
+        }
+
+        .contact-block a {
+            color: var(--arc-gold);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--arc-white);
+            margin-bottom: 4px;
+        }
+
+        .contact-role {
+            font-size: 13px;
+            color: rgba(255,255,255,0.45);
+            margin-bottom: 20px;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--arc-darkest);
+            color: rgba(255,255,255,0.3);
+            text-align: center;
+            padding: 32px 40px;
+            font-size: 12.5px;
+        }
+
+        .footer a {
+            color: rgba(255,255,255,0.4);
+            text-decoration: none;
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 32px; }
+            .hero-meta { gap: 24px; }
+            .card-top { flex-direction: column; gap: 20px; }
+            .card-meta-right { align-items: flex-start; }
+            .card-body, .card-top { padding: 28px; }
+            .card-footer { padding: 18px 28px; flex-direction: column; gap: 12px; align-items: flex-start; }
+            .card-stats { grid-template-columns: repeat(2, 1fr); }
+            .hero-inner { padding: 40px 24px 50px; }
+            .editorial, .closing { padding: 60px 24px; }
+            .candidate-card { padding: 0 16px; }
+            .candidates-header { padding: 0 16px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+    <div class="hero-top-bar"></div>
+    <div class="hero-inner">
+        <div class="hero-brand">
+            <span class="logo-text">ARC</span>
+            <span class="logo-accent"></span>
+            <span style="font-size:13px;color:rgba(255,255,255,0.35);font-weight:500;letter-spacing:0.5px;">by ChargeItSpot</span>
+        </div>
+        <div class="hero-badge">Sagan White Glove Selection</div>
+        <h1>Your next<br><strong>Integration Engineer</strong><br>is already here.</h1>
+        <p class="hero-subtitle">Nine engineers. Each one handpicked, interviewed, and evaluated against the specific demands of ARC's integration platform. Not a stack of resumes — a curated shortlist built around your architecture, your clients, and your standards.</p>
+        <div class="hero-meta">
+            <div class="hero-meta-item">
+                <span class="hero-meta-label">Role</span>
+                <span class="hero-meta-value">Sr. Software Engineer – Integration Platform</span>
+            </div>
+            <div class="hero-meta-item">
+                <span class="hero-meta-label">Candidates Presented</span>
+                <span class="hero-meta-value">9</span>
+            </div>
+            <div class="hero-meta-item">
+                <span class="hero-meta-label">Focus</span>
+                <span class="hero-meta-value">Java / Spring Boot / Enterprise Auth / Multi-Tenant</span>
+            </div>
+            <div class="hero-meta-item">
+                <span class="hero-meta-label">Presented by</span>
+                <span class="hero-meta-value">Jesus Pacheco · Sagan</span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- ===== EDITORIAL INTRO ===== -->
+<section class="editorial">
+    <div class="editorial-label">A note on selection</div>
+    <h2>Integration is a craft. We sourced for it specifically.</h2>
+    <p>
+        ARC's integration platform sits at the intersection of enterprise identity systems, client-specific authentication flows, and high-reliability device management infrastructure. The engineer who steps into this role won't just write backend services — they'll be the thread connecting your platform to <strong>Active Directory environments, Okta tenants, and dozens of enterprise clients</strong>, each with their own security requirements and data contracts.
+    </p>
+    <p>
+        That's a narrow profile. We didn't search for generic Java developers. We searched for engineers who have <strong>operated under those exact constraints</strong> — multi-tenant isolation, OAuth/SAML flows, third-party API reliability, and the discipline to follow architectural guardrails set by a Principal Engineer while owning execution end-to-end.
+    </p>
+    <p>
+        Every candidate in this shortlist was interviewed with that context in mind. The questions mirrored your integration scenarios. The answers revealed how each person thinks when systems break, when contracts change, and when an enterprise client's identity provider behaves unexpectedly.
+    </p>
+    <div class="editorial-divider"></div>
+    <p>
+        What follows isn't a ranking — it's a curated selection. Each engineer brings a distinct combination of depth, experience, and availability. <strong>Some are battle-tested at fintech scale. Others bring rare expertise in exactly the auth protocols your clients run.</strong> You'll find a match here.
+    </p>
+</section>
+
+<!-- ===== CANDIDATES ===== -->
+<section class="candidates-section">
+    <div class="candidates-header">
+        <h2>The Shortlist</h2>
+        <p>Nine engineers evaluated for ARC's integration platform role. Presented in no particular order.</p>
+    </div>
+
+    <!-- CANDIDATE 1: TAFADZWA -->
+    <div class="candidate-card">
+        <div class="card">
+            <div class="card-top">
+                <div class="card-identity">
+                    <div class="card-avatar">TH</div>
+                    <div>
+                        <div class="card-name">Tafadzwa H.</div>
+                        <div class="card-title">Senior Software Engineer · Backend / Microservices · Zimbabwe</div>
+                    </div>
+                </div>
+                <div class="card-meta-right">
+                    <span class="card-location">Zimbabwe</span>
+                    <span class="card-salary">$3,000 / month</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="card-narrative">
+                    Tafadzwa doesn't just claim uptime — he built it. He led the migration of EcoCash's mobile wallet for <strong>over 15 million users with zero critical downtime</strong>, architecting the path from a legacy monolith to cloud-native microservices without dropping a transaction. That's not a side project. That's the kind of operational pressure that reveals whether an engineer can be trusted with systems other people depend on.
+                </p>
+                <p class="card-narrative">
+                    His authentication stack is precise and production-proven: <strong>Keycloak for OAuth2 and JWT</strong>, with multi-node load distribution and service mesh patterns he's applied in live financial infrastructure. When asked how he'd connect an external client system to an internal kiosk platform, he answered in architecture — load balancers, reactive Spring Boot services, Kubernetes deployment, and PostgreSQL from day one. No hand-waving.
+                </p>
+                <p class="card-narrative">
+                    He's built and documented <strong>300+ APIs using Swagger</strong>, collaborates directly with QA and product before code reaches staging, and has his own mental model for how to make third-party onboarding nearly self-service. He also runs incident retrospectives as standard practice. That's a "Details Matter" engineer if there ever was one.
+                </p>
+                <div class="signal-row">
+                    <span class="signal-tag">Java 17 + Spring Boot</span>
+                    <span class="signal-tag">Keycloak / OAuth2 / JWT</span>
+                    <span class="signal-tag">Kafka + RabbitMQ</span>
+                    <span class="signal-tag">Kubernetes + Docker</span>
+                    <span class="signal-tag">Prometheus + Grafana</span>
+                    <span class="signal-tag">15M-user migration</span>
+                    <span class="signal-tag blue">PostgreSQL</span>
+                    <span class="signal-tag blue">CI/CD pipelines</span>
+                    <span class="signal-tag amber">Zimbabwe (UTC+2)</span>
+                </div>
+                <div class="card-stats">
+                    <div class="stat-box">
+                        <div class="stat-label">Experience</div>
+                        <div class="stat-value">5+ years</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Core Stack</div>
+                        <div class="stat-value">Java / Spring Boot</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Key Differentiator</div>
+                        <div class="stat-value">Zero-downtime at scale</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <span class="card-footer-note">Fintech · Telecom · Mission-critical platforms</span>
+                <a href="https://profiles.candidate-profiles.com/tafadzwa-h-sr-software-engineer-2026-02-18/" target="_blank" class="profile-link">
+                    View Full Profile
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- CANDIDATE 2: VICTOR -->
+    <div class="candidate-card">
+        <div class="card">
+            <div class="card-top">
+                <div class="card-identity">
+                    <div class="card-avatar">VO</div>
+                    <div>
+                        <div class="card-name">Victor O.</div>
+                        <div class="card-title">Senior Software Engineer · Backend / Integration · Nigeria</div>
+                    </div>
+                </div>
+                <div class="card-meta-right">
+                    <span class="card-location">Nigeria</span>
+                    <span class="card-salary">$4,500 / month</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="card-narrative">
+                    With <strong>13 years of backend engineering</strong>, Victor has arrived at the kind of technical clarity that only comes from building real systems through real failures. He's worked with <strong>Active Directory and Okta integrations</strong> directly — not theoretically — and applies CQRS architecture to cleanly separate command and query paths in integration-heavy platforms.
+                </p>
+                <p class="card-narrative">
+                    His multi-tenant isolation model is header-based and middleware-enforced, with tenant context cached for performance. He uses <strong>OpenID Connect for federated auth flows</strong>, requiring third-party services to register as clients before they can communicate — exactly the kind of access control discipline an enterprise kiosk platform needs. He's reduced API response times by 40% through query tuning and cut downtime by 50% at a SaaS company supporting millions of users.
+                </p>
+                <p class="card-narrative">
+                    He builds adapter patterns around every third-party API, logs every request boundary, and mentors junior engineers as a natural part of his workflow. <strong>He's overqualified on paper — and that's the point.</strong> The integration platform role at ARC needs someone who doesn't need to be walked through it. Victor can execute while growing under a Principal Engineer.
+                </p>
+                <div class="signal-row">
+                    <span class="signal-tag">Java / Spring Boot</span>
+                    <span class="signal-tag">Active Directory + Okta</span>
+                    <span class="signal-tag">OAuth / SAML / OpenID</span>
+                    <span class="signal-tag">CQRS Architecture</span>
+                    <span class="signal-tag">Multi-tenant isolation</span>
+                    <span class="signal-tag">PostgreSQL + SQL Server</span>
+                    <span class="signal-tag blue">AWS + Azure</span>
+                    <span class="signal-tag blue">Docker + Kubernetes</span>
+                    <span class="signal-tag amber">Nigeria (UTC+1)</span>
+                </div>
+                <div class="card-stats">
+                    <div class="stat-box">
+                        <div class="stat-label">Experience</div>
+                        <div class="stat-value">13 years</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Core Stack</div>
+                        <div class="stat-value">Java / Spring Boot</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Key Differentiator</div>
+                        <div class="stat-value">AD/Okta + multi-tenant</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <span class="card-footer-note">Healthcare Tech · SaaS · Enterprise Integration</span>
+                <a href="https://profiles.candidate-profiles.com/victor-o-sr-software-engineer-2026-02-18/" target="_blank" class="profile-link">
+                    View Full Profile
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- CANDIDATE 3: ISAAC U. -->
+    <div class="candidate-card">
+        <div class="card">
+            <div class="card-top">
+                <div class="card-identity">
+                    <div class="card-avatar">IU</div>
+                    <div>
+                        <div class="card-name">Isaac U.</div>
+                        <div class="card-title">Solutions Architect / Platform Lead · Fintech · Costa Rica</div>
+                    </div>
+                </div>
+                <div class="card-meta-right">
+                    <span class="card-location">Costa Rica</span>
+                    <span class="card-salary">$5,000 / month</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="card-narrative">
+                    Isaac built and ran backend systems for <strong>digital banking platforms processing ~100,000 transactions per second</strong> in regulated environments. That means he's already solved the hard problems: ISO8583 payment flows, retry logic with idempotency, 24/7 incident response, and real-time observability. The reliability bar in fintech is unforgiving — and he's operated under it for years.
+                </p>
+                <p class="card-narrative">
+                    His approach to multi-tenancy is data-logic isolation within shared architecture — tenant context handled at the service boundary, with a private network database layer that doesn't expose isolation gaps. He documents everything with <strong>Lucidchart before a line of code is written</strong>, aligns with stakeholders through API contracts with full versioning, and uses Prometheus and Grafana as standard observability infrastructure.
+                </p>
+                <p class="card-narrative">
+                    Based in Costa Rica, Isaac works in a timezone highly compatible with US teams — <strong>he's built for the kind of async-first, cross-timezone collaboration</strong> that ARC's offshore model requires. Bilingual in Spanish and English, clear communicator, methodical thinker.
+                </p>
+                <div class="signal-row">
+                    <span class="signal-tag">Java / Spring Boot</span>
+                    <span class="signal-tag">Node.js / TypeScript</span>
+                    <span class="signal-tag">100K TPS fintech systems</span>
+                    <span class="signal-tag">ISO8583 payment flows</span>
+                    <span class="signal-tag">Idempotency patterns</span>
+                    <span class="signal-tag">AWS + Kubernetes + Terraform</span>
+                    <span class="signal-tag blue">Prometheus + Grafana</span>
+                    <span class="signal-tag amber">Costa Rica (UTC-6)</span>
+                </div>
+                <div class="card-stats">
+                    <div class="stat-box">
+                        <div class="stat-label">Experience</div>
+                        <div class="stat-value">8+ years</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Core Stack</div>
+                        <div class="stat-value">Java / Node.js / AWS</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Key Differentiator</div>
+                        <div class="stat-value">100K TPS at regulated scale</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <span class="card-footer-note">Fintech · Banking · Platform Architecture</span>
+                <a href="https://profiles.candidate-profiles.com/isaac-u-sr-software-engineer-2026-02-18/" target="_blank" class="profile-link">
+                    View Full Profile
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- CANDIDATE 4: JEROME -->
+    <div class="candidate-card">
+        <div class="card">
+            <div class="card-top">
+                <div class="card-identity">
+                    <div class="card-avatar">JL</div>
+                    <div>
+                        <div class="card-name">Jérôme L.</div>
+                        <div class="card-title">Cloud Full Stack Architect · Backend / Event-driven · Argentina</div>
+                    </div>
+                </div>
+                <div class="card-meta-right">
+                    <span class="card-location">Argentina</span>
+                    <span class="card-salary">$5,000 / month</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="card-narrative">
+                    Jérôme is what you get when a full-stack architect with 12 years of experience has worked at <strong>Renault, Amadeus, and Western Union-scale systems</strong> — then decided he wants to be passionate about the product he builds. His event-driven architecture experience is hands-on: he designed a Waze-like ingestion pipeline at Renault using <strong>Apache Beam on GCP processing millions of daily events</strong>, with hybrid real-time/batch pipelines and full GitOps/Terraform infrastructure.
+                </p>
+                <p class="card-narrative">
+                    At Amadeus, he built APIs for external leisure clients focused on security-first design — explicit error contracts, auth key validation, and documentation that made client onboarding frictionless. He treats documentation as a product artifact, not an afterthought, and his API design philosophy is built around <strong>making it hard to misuse your endpoints</strong>.
+                </p>
+                <p class="card-narrative">
+                    Argentina-based and fluent in English, French, and Spanish, Jérôme works comfortably within US timezone overlap. He has <strong>PowerBI in his toolset</strong> — a rare combination with deep backend engineering. He's a strong candidate for a team that values a senior contributor who can see the full system.
+                </p>
+                <div class="signal-row">
+                    <span class="signal-tag">Java / Spring Boot</span>
+                    <span class="signal-tag">Kafka + PubSub</span>
+                    <span class="signal-tag">GCP + AWS + Azure</span>
+                    <span class="signal-tag">Terraform + ArgoCD</span>
+                    <span class="signal-tag">Angular + React</span>
+                    <span class="signal-tag">PowerBI</span>
+                    <span class="signal-tag blue">Apache Beam</span>
+                    <span class="signal-tag blue">Kubernetes</span>
+                    <span class="signal-tag amber">Argentina (UTC-3)</span>
+                </div>
+                <div class="card-stats">
+                    <div class="stat-box">
+                        <div class="stat-label">Experience</div>
+                        <div class="stat-value">12 years</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Core Stack</div>
+                        <div class="stat-value">Java / GCP / Kafka</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Key Differentiator</div>
+                        <div class="stat-value">Event-driven at enterprise scale</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <span class="card-footer-note">Automotive · Travel Tech · Cloud Architecture</span>
+                <a href="https://profiles.candidate-profiles.com/jerome-l-sr-software-engineer-2026-02-18/" target="_blank" class="profile-link">
+                    View Full Profile
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- CANDIDATE 5: ISAAC K. -->
+    <div class="candidate-card">
+        <div class="card">
+            <div class="card-top">
+                <div class="card-identity">
+                    <div class="card-avatar">IK</div>
+                    <div>
+                        <div class="card-name">Isaac K.</div>
+                        <div class="card-title">Engineering Manager / Full Stack · Fintech · Kenya</div>
+                    </div>
+                </div>
+                <div class="card-meta-right">
+                    <span class="card-location">Kenya</span>
+                    <span class="card-salary">$3,500 / month</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="card-narrative">
+                    Isaac brings <strong>17 years of full-stack engineering</strong> spanning fintech, insurance, and enterprise platforms — and unlike many senior engineers, he's genuinely comfortable moving between leadership and hands-on individual contributor roles. He doesn't lose sharpness when the org chart changes. At Turnkey Africa, he led the design of <strong>event-driven REST APIs with GraphQL</strong> for an insurance integration platform, improving data query efficiency and system performance using Redis.
+                </p>
+                <p class="card-narrative">
+                    His integration architecture is OAuth2-first with internal identity microservices for users not covered by external providers. He handles API versioning as a strategic discipline — not just a technical habit — understanding that in multi-client platforms, <strong>breaking a contract has a cost that cascades</strong>. He's measured success with Gatling and JMeter before production, and uses queuing to protect integrations when upstream providers fail.
+                </p>
+                <p class="card-narrative">
+                    Currently building his own AI-powered platform (TymeCell), Isaac is a self-starter who is motivated by technically interesting problems. He brings a diverse toolchain and the mentality of someone who's seen what breaks and built around it.
+                </p>
+                <div class="signal-row">
+                    <span class="signal-tag">Java / Spring Boot / Kotlin</span>
+                    <span class="signal-tag">GraphQL + REST APIs</span>
+                    <span class="signal-tag">OAuth2 + JWT</span>
+                    <span class="signal-tag">RabbitMQ</span>
+                    <span class="signal-tag">Redis caching</span>
+                    <span class="signal-tag">AWS + GCP + Azure</span>
+                    <span class="signal-tag blue">Docker + Kubernetes</span>
+                    <span class="signal-tag blue">React + Angular</span>
+                    <span class="signal-tag amber">Kenya (UTC+3)</span>
+                </div>
+                <div class="card-stats">
+                    <div class="stat-box">
+                        <div class="stat-label">Experience</div>
+                        <div class="stat-value">17 years</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Core Stack</div>
+                        <div class="stat-value">Java / GraphQL / Cloud</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Key Differentiator</div>
+                        <div class="stat-value">Breadth + leadership depth</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <span class="card-footer-note">Insurance · Fintech · Mobile Platforms</span>
+                <a href="https://profiles.candidate-profiles.com/isaac-k-sr-software-engineer-2026-02-18/" target="_blank" class="profile-link">
+                    View Full Profile
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- CANDIDATE 6: DIEGO -->
+    <div class="candidate-card">
+        <div class="card">
+            <div class="card-top">
+                <div class="card-identity">
+                    <div class="card-avatar">DG</div>
+                    <div>
+                        <div class="card-name">Diego G.</div>
+                        <div class="card-title">Tech Lead / Backend Architect · Enterprise · Argentina</div>
+                    </div>
+                </div>
+                <div class="card-meta-right">
+                    <span class="card-location">Argentina</span>
+                    <span class="card-salary">$5,000 / month</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="card-narrative">
+                    Diego has been writing production software since before most of the modern stack existed. <strong>45 years of engineering experience</strong> — from CP/M environments to Kafka-driven AWS microservices at Western Union — means he's seen every integration pattern fail, and knows how to build systems that don't. He spent 17 years at Belatrix (now Globant) leading Java teams for clients like <strong>Royal Caribbean, British Airways, and Western Union</strong>.
+                </p>
+                <p class="card-narrative">
+                    His integration methodology is systematic: understand the contract, map the data, build adapters, test heavily before trust. He's held <strong>Scrum Master and Advanced SAFe certifications</strong> since 2003, which means he understands how engineering fits into delivery cadence — and how to work within constraints he didn't set. He's honest about his gaps (high-volume data ingestion is not his deepest area) and brings the kind of craftsmanship that doesn't require supervision.
+                </p>
+                <p class="card-narrative">
+                    Argentina-based with strong US team collaboration experience, Diego brings institutional knowledge and cross-domain versatility. If you want someone who's seen the whole arc of software engineering and applies that perspective to your platform, he's a rare find.
+                </p>
+                <div class="signal-row">
+                    <span class="signal-tag">Java / Spring Boot</span>
+                    <span class="signal-tag">Kafka</span>
+                    <span class="signal-tag">AWS + GCP</span>
+                    <span class="signal-tag">PostgreSQL + MongoDB</span>
+                    <span class="signal-tag">Docker + Kubernetes</span>
+                    <span class="signal-tag">Angular + React</span>
+                    <span class="signal-tag blue">Scrum Master + SAFe certified</span>
+                    <span class="signal-tag blue">Western Union · British Airways</span>
+                    <span class="signal-tag amber">Argentina (UTC-3)</span>
+                </div>
+                <div class="card-stats">
+                    <div class="stat-box">
+                        <div class="stat-label">Experience</div>
+                        <div class="stat-value">45 years</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Core Stack</div>
+                        <div class="stat-value">Java / Kafka / AWS</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Key Differentiator</div>
+                        <div class="stat-value">Enterprise pedigree + depth</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <span class="card-footer-note">Financial Services · Airlines · Research</span>
+                <a href="https://profiles.candidate-profiles.com/diego-g-sr-software-engineer-2026-02-18/" target="_blank" class="profile-link">
+                    View Full Profile
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- CANDIDATE 7: MARCO -->
+    <div class="candidate-card">
+        <div class="card">
+            <div class="card-top">
+                <div class="card-identity">
+                    <div class="card-avatar">MS</div>
+                    <div>
+                        <div class="card-name">Marco S.</div>
+                        <div class="card-title">Senior Java Backend Developer · Enterprise · Chile</div>
+                    </div>
+                </div>
+                <div class="card-meta-right">
+                    <span class="card-location">Chile</span>
+                    <span class="card-salary">$3,000 / month</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="card-narrative">
+                    Marco is the kind of engineer enterprise platforms are quietly built on — <strong>13 years of deep Java backend work</strong> spanning public sector, consulting, and corporate environments at companies like Globant and Allware. He's maintained mission-critical production systems under real pressure, optimized stored procedures and SQL queries, and built SOAP and REST integration services for institutional systems that couldn't afford failure.
+                </p>
+                <p class="card-narrative">
+                    His communication stands out: <strong>advanced English proficiency with clear, structured thinking</strong> — exactly what async collaboration across time zones requires. He's methodical in his approach to testing (JUnit + Mockito), honest about the areas where he's still growing (cloud, OAuth), and demonstrates a genuine growth mindset rather than overstating his credentials.
+                </p>
+                <p class="card-narrative">
+                    For a role that emphasizes following defined patterns and growing under mentorship from a Principal Engineer, Marco's profile maps well. He brings the Java and Spring Boot fundamentals that will matter daily, with the humility and work ethic to absorb the parts of the stack that are new to him.
+                </p>
+                <div class="signal-row">
+                    <span class="signal-tag">Java 7–22 / Spring Boot</span>
+                    <span class="signal-tag">REST + SOAP web services</span>
+                    <span class="signal-tag">Oracle + MySQL + SQL Server</span>
+                    <span class="signal-tag">JUnit + Mockito</span>
+                    <span class="signal-tag">Agile / Scrum teams</span>
+                    <span class="signal-tag blue">Globant · Allware</span>
+                    <span class="signal-tag amber">Chile (UTC-3)</span>
+                    <span class="signal-tag gray">Advanced English</span>
+                </div>
+                <div class="card-stats">
+                    <div class="stat-box">
+                        <div class="stat-label">Experience</div>
+                        <div class="stat-value">13 years</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Core Stack</div>
+                        <div class="stat-value">Java / Spring / Oracle</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Key Differentiator</div>
+                        <div class="stat-value">Reliability + clear comms</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <span class="card-footer-note">Public Sector · Enterprise Consulting · Production Systems</span>
+                <a href="https://profiles.candidate-profiles.com/marco-s-sr-software-engineer-2026-02-18/" target="_blank" class="profile-link">
+                    View Full Profile
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- CANDIDATE 8: ARNOLD -->
+    <div class="candidate-card">
+        <div class="card">
+            <div class="card-top">
+                <div class="card-identity">
+                    <div class="card-avatar">AM</div>
+                    <div>
+                        <div class="card-name">Arnold M.</div>
+                        <div class="card-title">Lead Java Backend Developer · Fintech / Payments · Botswana</div>
+                    </div>
+                </div>
+                <div class="card-meta-right">
+                    <span class="card-location">Botswana</span>
+                    <span class="card-salary">$2,000 / month</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="card-narrative">
+                    Arnold is an <strong>Oracle Certified Professional Java developer</strong> who has built his career at the intersection of fintech, payments, and enterprise compliance — environments where PCI DSS and ISO 27001 aren't optional reading. He's currently leading development of a full-stack Sports Management System for the Botswana Football Association, architecting the PostgreSQL data model, AWS infrastructure, and CI/CD pipelines with GitHub Actions from scratch.
+                </p>
+                <p class="card-narrative">
+                    His payments background gives him a specific kind of security discipline: <strong>he thinks in terms of authorization boundaries, access policies, and audit trails</strong>. He's worked on Oracle WebLogic-based enterprise platforms integrating Java systems with banking infrastructure, which is closer to the ARC integration profile than most candidates' experience would suggest.
+                </p>
+                <p class="card-narrative">
+                    Arnold is early in his cloud-native journey, but his fundamentals are solid and his motivation is genuine. At $2,000/month, he represents <strong>exceptional value for a team that can provide mentorship</strong> — and he'll grow quickly in an environment with strong architectural guidance from a Principal Engineer.
+                </p>
+                <div class="signal-row">
+                    <span class="signal-tag">Java SE 17 / Spring Boot</span>
+                    <span class="signal-tag">Oracle Certified Professional</span>
+                    <span class="signal-tag">PCI DSS + ISO 27001</span>
+                    <span class="signal-tag">JWT / Spring Security</span>
+                    <span class="signal-tag">PostgreSQL + AWS</span>
+                    <span class="signal-tag">GitHub Actions CI/CD</span>
+                    <span class="signal-tag blue">WebLogic enterprise platforms</span>
+                    <span class="signal-tag amber">Botswana (UTC+2)</span>
+                </div>
+                <div class="card-stats">
+                    <div class="stat-box">
+                        <div class="stat-label">Experience</div>
+                        <div class="stat-value">5+ years</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Core Stack</div>
+                        <div class="stat-value">Java / Spring / AWS</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Key Differentiator</div>
+                        <div class="stat-value">Compliance + payments depth</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <span class="card-footer-note">Fintech · Payments · Enterprise Integration</span>
+                <a href="https://profiles.candidate-profiles.com/arnold-m-sr-software-engineer-2026-02-18/" target="_blank" class="profile-link">
+                    View Full Profile
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- CANDIDATE 9: EDGAR -->
+    <div class="candidate-card">
+        <div class="card">
+            <div class="card-top">
+                <div class="card-identity">
+                    <div class="card-avatar">ER</div>
+                    <div>
+                        <div class="card-name">Edgar R.</div>
+                        <div class="card-title">Head of Platform / Senior Backend Engineer · Fintech · México</div>
+                    </div>
+                </div>
+                <div class="card-meta-right">
+                    <span class="card-location">México</span>
+                    <span class="card-salary">$4,167 / month</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="card-narrative">
+                    Edgar has spent a decade solving the kind of problems that come after you've scaled — when the monolith breaks under load, when the team can't move fast enough, when the infrastructure needs to migrate to the cloud while the business keeps running. At Kiban, he <strong>owned the platform product lifecycle as Head of Platform</strong>, migrating a monolithic fintech SaaS to microservices on GCP while serving as the main technical partner for customer integrations.
+                </p>
+                <p class="card-narrative">
+                    His experience at 4th Source (7-Eleven USA) and GFT México (banking) included Kafka-based distributed systems, JWT-secured REST APIs on AWS, and <strong>enterprise Java service design for regulated environments</strong>. He's built APIs under real compliance pressure, with the kind of stakeholder management skills that come from having to explain architecture trade-offs to business teams.
+                </p>
+                <p class="card-narrative">
+                    Edgar is honest about learning from mistakes — including architectural ones — and brings a self-taught depth to cloud-native patterns that formal training rarely produces. His <strong>Mexico City base makes him highly compatible with US East and Central time zones</strong>, a practical advantage for collaborative sprints.
+                </p>
+                <div class="signal-row">
+                    <span class="signal-tag">Java / Spring Boot / Go</span>
+                    <span class="signal-tag">Apache Kafka</span>
+                    <span class="signal-tag">GCP + AWS</span>
+                    <span class="signal-tag">Docker + Kubernetes</span>
+                    <span class="signal-tag">JWT / REST APIs</span>
+                    <span class="signal-tag">Monolith → Microservices</span>
+                    <span class="signal-tag blue">7-Eleven USA · Banking</span>
+                    <span class="signal-tag blue">React frontend</span>
+                    <span class="signal-tag amber">México (UTC-6)</span>
+                </div>
+                <div class="card-stats">
+                    <div class="stat-box">
+                        <div class="stat-label">Experience</div>
+                        <div class="stat-value">10+ years</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Core Stack</div>
+                        <div class="stat-value">Java / Go / GCP / Kafka</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Key Differentiator</div>
+                        <div class="stat-value">Platform ownership + migration</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <span class="card-footer-note">Fintech · Banking · Enterprise SaaS</span>
+                <a href="https://profiles.candidate-profiles.com/edgar-r-sr-software-engineer-2026-02-18/" target="_blank" class="profile-link">
+                    View Full Profile
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<!-- ===== CLOSING ===== -->
+<section class="closing">
+    <div class="editorial-label">Next steps</div>
+    <h2>The shortlist is ready. Let's find your match.</h2>
+    <p>
+        Each of these engineers has been individually screened, interviewed, and evaluated against ARC's specific integration requirements. The full candidate profiles — including video introductions, technical interview Q&amp;As, and detailed assessments — are linked above.
+    </p>
+    <p>
+        When you're ready to move forward on any of them, I'll coordinate introduction calls, handle scheduling across time zones, and manage everything through to offer. <strong>My job is to make this as frictionless as possible for your team.</strong>
+    </p>
+    <p>
+        If none of these feel like exactly the right fit, tell me what's missing — and I'll find it. That's what White Glove means.
+    </p>
+
+    <div class="contact-block">
+        <div class="contact-name">Jesus Pacheco</div>
+        <div class="contact-role">Head of White Glove Hirings · Sagan</div>
+        <p>Questions, feedback, or ready to move forward?</p>
+        <p><a href="mailto:jesus.p@getsagan.com">jesus.p@getsagan.com</a></p>
+        <p style="margin-top:12px;font-size:12px;color:rgba(255,255,255,0.25);">Sagan · Redefining Recruitment · getsagan.com</p>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+    <p>Prepared exclusively for ARC by ChargeItSpot &nbsp;·&nbsp; Sagan White Glove &nbsp;·&nbsp; <a href="https://getsagan.com" target="_blank">getsagan.com</a></p>
+</footer>
+
+</body>
+</html>
