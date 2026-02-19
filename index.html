@@ -469,152 +469,252 @@
             color: var(--arc-darkest);
         }
 
-        .contact-block {
-            margin-top: 40px;
-            padding: 32px 36px;
-            background: var(--arc-darker);
-            border-radius: 16px;
-            color: var(--arc-white);
-        }
-
-        .contact-block p {
-            color: rgba(255,255,255,0.6);
-            font-size: 14px;
-            margin-bottom: 6px;
-        }
-
-        .contact-block a {
-            color: var(--arc-gold);
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .contact-name {
-            font-size: 18px;
-            font-weight: 700;
-            color: var(--arc-white);
-            margin-bottom: 4px;
-        }
-
-        .contact-role {
-            font-size: 13px;
-            color: rgba(255,255,255,0.45);
-            margin-bottom: 20px;
-        }
-
         /* ===== TEAM SECTION ===== */
         .team-section {
-            margin-top: 56px;
+            background: var(--arc-light);
+            padding: 80px 0;
         }
 
-        .team-label {
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
+        .team-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .team-section h2 {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 12px;
+        }
+
+        .team-subtitle {
+            font-size: 16px;
             color: var(--arc-gray);
-            margin-bottom: 20px;
+            max-width: 600px;
+            margin-bottom: 48px;
         }
 
         .team-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 16px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 56px;
         }
 
         .team-card {
-            background: var(--arc-light);
-            border-radius: 12px;
-            padding: 24px;
-            display: flex;
-            align-items: flex-start;
-            gap: 16px;
-            border: 1px solid var(--arc-gray-light);
+            background: var(--arc-white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
-        .team-card--lead {
+        .team-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 12px 36px rgba(0,0,0,0.1);
+        }
+
+        .team-card-top {
+            height: 200px;
+            overflow: hidden;
             background: var(--arc-darker);
-            border-color: transparent;
-            grid-column: span 3;
-            flex-direction: row;
-            align-items: center;
         }
 
-        .team-avatar {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background: rgba(250, 190, 50, 0.12);
-            border: 1.5px solid rgba(250, 190, 50, 0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 13px;
-            font-weight: 700;
-            color: var(--arc-gold);
-            flex-shrink: 0;
+        .team-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
         }
 
-        .team-card--lead .team-avatar {
-            width: 52px;
-            height: 52px;
-            font-size: 15px;
-        }
-
-        .team-info {
-            display: flex;
-            flex-direction: column;
-            gap: 3px;
+        .team-card-body {
+            padding: 24px;
         }
 
         .team-name {
-            font-size: 15px;
+            font-size: 17px;
             font-weight: 700;
             color: var(--arc-darkest);
-        }
-
-        .team-card--lead .team-name {
-            color: var(--arc-white);
+            margin-bottom: 4px;
         }
 
         .team-role {
             font-size: 12.5px;
             font-weight: 600;
             color: var(--arc-gold-deep);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
         }
 
-        .team-card--lead .team-role {
-            color: var(--arc-gold);
-        }
-
-        .team-detail {
+        .team-location {
+            display: flex;
+            align-items: center;
+            gap: 5px;
             font-size: 12px;
             color: var(--arc-gray);
-            margin-top: 2px;
+            margin-bottom: 12px;
         }
 
-        .team-card--lead .team-detail {
-            color: rgba(255,255,255,0.4);
+        .team-bio {
+            font-size: 13.5px;
+            line-height: 1.7;
+            color: var(--arc-gray);
+            margin-bottom: 16px;
         }
 
         .team-email {
-            font-size: 12.5px;
-            font-weight: 500;
-            color: var(--arc-gold);
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--arc-gold-deep);
             text-decoration: none;
-            margin-top: 6px;
         }
 
         .team-email:hover {
             text-decoration: underline;
         }
 
+        /* Sagan info block */
+        .sagan-info {
+            display: flex;
+            align-items: flex-start;
+            gap: 32px;
+            background: var(--arc-darker);
+            border-radius: 16px;
+            padding: 40px 44px;
+            color: var(--arc-white);
+        }
+
+        .sagan-logo-mark {
+            width: 56px;
+            height: 56px;
+            background: var(--arc-gold);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--arc-darker);
+            flex-shrink: 0;
+        }
+
+        .sagan-text h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--arc-white);
+            margin-bottom: 10px;
+        }
+
+        .sagan-text p {
+            font-size: 14px;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .sagan-text p strong {
+            color: rgba(255,255,255,0.85);
+        }
+
+        .sagan-stats {
+            display: flex;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+
+        .sagan-stat {
+            font-size: 13px;
+            color: rgba(255,255,255,0.5);
+        }
+
+        .sagan-stat strong {
+            color: var(--arc-gold);
+            font-weight: 700;
+        }
+
+        /* ===== FOOTER CTA ===== */
+        .footer-cta {
+            background: var(--arc-darkest);
+            text-align: center;
+            padding: 80px 40px;
+            color: var(--arc-white);
+        }
+
+        .footer-cta h2 {
+            font-size: 32px;
+            font-weight: 300;
+            letter-spacing: -0.5px;
+            margin-bottom: 16px;
+        }
+
+        .footer-cta h2 strong {
+            font-weight: 700;
+        }
+
+        .footer-cta p {
+            font-size: 16px;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 32px;
+        }
+
+        .footer-contact {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--arc-gold);
+            color: var(--arc-darker);
+            font-size: 14px;
+            font-weight: 700;
+            padding: 14px 28px;
+            border-radius: 100px;
+            text-decoration: none;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        .footer-contact:hover {
+            background: var(--arc-gold-soft);
+            transform: translateY(-1px);
+        }
+
+        .footer-bottom {
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(255,255,255,0.07);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-logo {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--arc-white);
+            letter-spacing: -0.5px;
+        }
+
+        .footer-note {
+            font-size: 12px;
+            color: rgba(255,255,255,0.25);
+        }
+
         @media (max-width: 768px) {
             .team-grid {
                 grid-template-columns: 1fr;
             }
-            .team-card--lead {
-                grid-column: span 1;
+            .sagan-info {
+                flex-direction: column;
+                text-align: center;
+                padding: 28px 24px;
+            }
+            .sagan-stats {
+                justify-content: center;
+            }
+            .team-inner {
+                padding: 0 24px;
             }
         }
 
@@ -1276,56 +1376,133 @@
 
 </section>
 
-<!-- ===== CLOSING ===== -->
-<section class="closing">
-    <div class="editorial-label">Next steps</div>
-    <h2>Target: your new engineer starts by end of March.</h2>
-    <p>
-        Each of these engineers has been individually screened, interviewed, and evaluated. The full profiles — video introductions, technical Q&amp;As, strength assessments — are all linked above. Two interview rounds is the plan: technical first, then cultural fit. I'll own the coordination end to end.
-    </p>
-    <p>
-        When you identify who you want to meet, I'll get the technical interview scheduled fast. <strong>The goal is to keep this moving</strong> — you told me end of March, and that's what we're building toward.
-    </p>
-    <p>
-        If the fit isn't here, tell me what's off — seniority, communication style, specific tech — and I'll recalibrate the next batch. That's what this process is for.
-    </p>
+    <!-- ===== MEET THE RECRUITING TEAM ===== -->
+    <section class="team-section fade-in">
+        <div class="team-inner">
+            <div class="editorial-label">Your Dedicated Team</div>
+            <h2>Meet the Recruiting Team</h2>
+            <p class="team-subtitle">Every White Glove engagement is led by a dedicated team that understands your business, your culture, and exactly what "the right fit" means for your organization.</p>
 
-    <div class="team-section">
-        <div class="team-label">Your dedicated team</div>
-        <div class="team-grid">
-            <div class="team-card team-card--lead">
-                <div class="team-avatar">JP</div>
-                <div class="team-info">
-                    <div class="team-name">Jesus Pacheco</div>
-                    <div class="team-role">Head of White Glove Hirings</div>
-                    <div class="team-detail">Lead · Strategy · Client relationship</div>
-                    <a href="mailto:jesus.p@getsagan.com" class="team-email">jesus.p@getsagan.com</a>
+            <div class="team-grid">
+                <!-- Jesus Pacheco -->
+                <div class="team-card">
+                    <div class="team-card-top">
+                        <img class="team-photo" src="https://saganrecruitment.com/wp-content/uploads/2025/10/Jesus-Pacheco.jpeg" alt="Jesús Pacheco">
+                    </div>
+                    <div class="team-card-body">
+                        <div class="team-name">Jes&uacute;s Pacheco</div>
+                        <div class="team-role">Head of White Glove Hirings</div>
+                        <div class="team-location">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            Buenos Aires, Argentina
+                        </div>
+                        <p class="team-bio">Leads the White Glove Hiring team with a high-touch, human-centered approach. MIT MAS credential. Passionate about building bridges between people and opportunities &mdash; ensuring every match creates long-term impact.</p>
+                        <a href="mailto:jesus.p@getsagan.com" class="team-email">jesus.p@getsagan.com</a>
+                    </div>
+                </div>
+
+                <!-- Manuel Castañeda -->
+                <div class="team-card">
+                    <div class="team-card-top">
+                        <img class="team-photo" src="https://saganrecruitment.com/wp-content/uploads/2025/08/Manuel.webp" alt="Manuel Castañeda">
+                    </div>
+                    <div class="team-card-body">
+                        <div class="team-name">Manuel Casta&ntilde;eda</div>
+                        <div class="team-role">Recruitment Team Lead</div>
+                        <div class="team-location">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            Bogot&aacute;, Colombia
+                        </div>
+                        <p class="team-bio">Manages a talented team of tech, marketing, and creative recruiters. Passionate about building great teams and matching the right talent with the right opportunity for lasting impact.</p>
+                        <a href="mailto:manuel.jaramillo@getsagan.com" class="team-email">manuel.jaramillo@getsagan.com</a>
+                    </div>
+                </div>
+
+                <!-- Noel Caleb Balderrama -->
+                <div class="team-card">
+                    <div class="team-card-top">
+                        <img class="team-photo" src="https://saganrecruitment.com/wp-content/uploads/2025/08/Noel-Balderama.webp" alt="Noel Balderrama">
+                    </div>
+                    <div class="team-card-body">
+                        <div class="team-name">Noel Caleb Balderrama</div>
+                        <div class="team-role">Technical Recruiter</div>
+                        <div class="team-location">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            Philippines
+                        </div>
+                        <p class="team-bio">Seasoned Technical Recruiter specializing in IT recruitment, sourcing, and ATS proficiency. Excels in aligning top talent with organizational needs and is committed to continuous improvement.</p>
+                        <a href="mailto:noel.b@getsagan.com" class="team-email">noel.b@getsagan.com</a>
+                    </div>
                 </div>
             </div>
-            <div class="team-card">
-                <div class="team-avatar">MC</div>
-                <div class="team-info">
-                    <div class="team-name">Manuel Castañeda</div>
-                    <div class="team-role">Talent Advisor</div>
-                    <div class="team-detail">Sourcing · Screening · Pipeline</div>
-                </div>
-            </div>
-            <div class="team-card">
-                <div class="team-avatar">NB</div>
-                <div class="team-info">
-                    <div class="team-name">Noel Caleb Balderrama</div>
-                    <div class="team-role">Talent Advisor</div>
-                    <div class="team-detail">Screening · Evaluation · Coordination</div>
+
+            <!-- Sagan Company Info -->
+            <div class="sagan-info">
+                <div class="sagan-logo-mark">S</div>
+                <div class="sagan-text">
+                    <h3>Powered by Sagan</h3>
+                    <p>Sagan connects skilled professionals from <strong>Latin America, Africa, Asia, the Middle East, Central &amp; Eastern Europe, and more</strong> with leading American companies. Through a curated, high-touch recruiting process, we match exceptional talent to opportunities that align with their goals and strengths &mdash; delivering placements that drive long-term success on both sides.</p>
+                    <div class="sagan-stats">
+                        <div class="sagan-stat"><strong>20,000</strong> Applications / Month</div>
+                        <div class="sagan-stat"><strong>2,000+</strong> Placements</div>
+                        <div class="sagan-stat"><strong>30+</strong> Countries</div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- ===== FOOTER ===== -->
-<footer class="footer">
-    <p>Prepared exclusively for ARC by ChargeItSpot &nbsp;·&nbsp; Sagan White Glove &nbsp;·&nbsp; <a href="https://getsagan.com" target="_blank">getsagan.com</a></p>
-</footer>
+    <!-- ===== FOOTER CTA ===== -->
+    <section class="footer-cta">
+        <h2>Ready to <strong>meet your next engineer?</strong></h2>
+        <p>We're here to coordinate interviews, answer questions, or refine the selection further. Your end-of-March target is in sight.</p>
+        <a href="mailto:jesus.p@getsagan.com" class="footer-contact">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Let's Schedule Next Steps
+        </a>
+        <div class="footer-bottom">
+            <div class="footer-logo">Sagan</div>
+            <div class="footer-note">Prepared exclusively for ARC by ChargeItSpot &middot; February 2026</div>
+        </div>
+    </section>
+
+    <!-- ===== SCROLL ANIMATION ===== -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -40px 0px'
+        });
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Animate strength bars when visible
+        const barObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const bars = entry.target.querySelectorAll('.strength-bar');
+                    bars.forEach(bar => {
+                        const width = bar.style.width;
+                        bar.style.width = '0%';
+                        setTimeout(() => {
+                            bar.style.width = width;
+                        }, 200);
+                    });
+                }
+            });
+        }, { threshold: 0.3 });
+
+        document.querySelectorAll('.strength-grid').forEach(el => {
+            barObserver.observe(el);
+        });
+    </script>
 
 </body>
 </html>
