@@ -210,7 +210,7 @@
             max-width: 1100px;
             margin: 0 auto;
             padding: 0 40px;
-            margin-bottom: 56px;
+            margin-bottom: 40px;
         }
 
         .candidates-header h2 {
@@ -223,6 +223,71 @@
         .candidates-header p {
             font-size: 16px;
             color: var(--arc-gray);
+        }
+
+        /* ===== BATCH SWITCHER ===== */
+        .batch-switcher {
+            max-width: 1100px;
+            margin: 0 auto 48px;
+            padding: 0 40px;
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .batch-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            border: 1.5px solid var(--arc-gray-light);
+            background: var(--arc-white);
+            color: var(--arc-gray);
+            transition: all 0.2s ease;
+            letter-spacing: 0.1px;
+        }
+
+        .batch-btn:hover {
+            border-color: var(--arc-gold);
+            color: var(--arc-darkest);
+        }
+
+        .batch-btn.active {
+            background: var(--arc-darkest);
+            border-color: var(--arc-darkest);
+            color: var(--arc-white);
+        }
+
+        .batch-btn .batch-count {
+            background: var(--arc-gold);
+            color: var(--arc-darkest);
+            font-size: 11px;
+            font-weight: 700;
+            padding: 2px 7px;
+            border-radius: 20px;
+            line-height: 1.4;
+        }
+
+        .batch-btn.active .batch-count {
+            background: rgba(250,190,50,0.25);
+            color: var(--arc-gold);
+        }
+
+        .batch-divider {
+            width: 1px;
+            height: 20px;
+            background: var(--arc-gray-light);
+            margin: 0 4px;
+        }
+
+        .batch-label {
+            font-size: 12px;
+            color: var(--arc-gray);
+            font-weight: 500;
         }
 
         .candidate-card {
@@ -816,8 +881,25 @@
 <section class="candidates-section">
     <div class="candidates-header">
         <h2>The Shortlist</h2>
-        <p>Nine engineers. All Java + Spring Boot qualified. All available for full US Eastern time overlap. Presented in no particular order.</p>
+        <p>18 engineers across two batches. All Java + Spring Boot qualified. Presented in no particular order.</p>
     </div>
+
+    <!-- BATCH SWITCHER -->
+    <div class="batch-switcher">
+        <button class="batch-btn active" onclick="switchBatch(1)" id="btn-batch-1">
+            Batch 1 — Feb 2026
+            <span class="batch-count">9</span>
+        </button>
+        <button class="batch-btn" onclick="switchBatch(2)" id="btn-batch-2">
+            Batch 2 — Mar 2026
+            <span class="batch-count">9</span>
+        </button>
+        <div class="batch-divider"></div>
+        <span class="batch-label">Click a batch to switch views</span>
+    </div>
+
+    <!-- ===== BATCH 1 ===== -->
+    <div id="batch-1">
 
     <!-- CANDIDATE 1: TAFADZWA -->
     <div class="candidate-card">
@@ -1374,6 +1456,563 @@
         </div>
     </div>
 
+    </div><!-- /batch-1 -->
+
+    <!-- ===== BATCH 2 ===== -->
+    <div id="batch-2" style="display:none">
+
+    <!-- CANDIDATE B2-1: RUBEN -->
+    <div class="candidate-card">
+        <div class="card">
+            <div class="card-top">
+                <div class="card-identity">
+                    <div class="card-avatar">RJ</div>
+                    <div>
+                        <div class="card-name">Ruben J.</div>
+                        <div class="card-title">Senior Software Engineer · Backend / APIs · Peru</div>
+                    </div>
+                </div>
+                <div class="card-meta-right">
+                    <span class="card-location">Peru</span>
+                    <span class="card-salary">$4,000 / month</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="card-narrative">
+                    Ruben has maintained production systems with real consequences. The Disney Parks Call Center application he supported runs on top of <strong>$2.6B+ in annual revenue</strong>. Before that, he designed REST APIs for Aval Group's mobile payments platform, which processes over $600M a year. He does not work on toy problems.
+                </p>
+                <p class="card-narrative">
+                    At Terra Dotta, he built the ISSS compliance platform integrating directly with <strong>SEVIS, the US government immigration tracking system</strong>. That is the kind of third-party integration work that has no room for ambiguity in the contract, the error handling, or the documentation. He uses Swagger/OpenAPI as standard practice and applies hexagonal architecture to keep service boundaries clean.
+                </p>
+                <p class="card-narrative">
+                    AWS certified, C1 English, Peru-based at <strong>UTC-5 with clean US Eastern overlap</strong>. His OAuth depth is limited compared to some others in this batch, but his execution track record is strong and his communication is clear.
+                </p>
+                <div class="signal-row">
+                    <span class="signal-tag">Java / Spring Boot</span>
+                    <span class="signal-tag">Python / C#</span>
+                    <span class="signal-tag">SEVIS API integration</span>
+                    <span class="signal-tag">Hexagonal architecture</span>
+                    <span class="signal-tag">AWS Certified</span>
+                    <span class="signal-tag">Swagger / OpenAPI</span>
+                    <span class="signal-tag blue">Oracle DB / DynamoDB</span>
+                    <span class="signal-tag blue">Docker / Azure</span>
+                    <span class="signal-tag amber">Peru (UTC-5)</span>
+                </div>
+                <div class="card-stats">
+                    <div class="stat-box">
+                        <div class="stat-label">Experience</div>
+                        <div class="stat-value">7+ years</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Core Stack</div>
+                        <div class="stat-value">Java / Spring Boot / AWS</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Key Differentiator</div>
+                        <div class="stat-value">Disney Parks + Gov API track record</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <span class="card-footer-note">EdTech · Payments · Enterprise SaaS</span>
+                <a href="https://profiles.candidate-profiles.com/ruben-j-sr-software-engineer-2026-03-04/" target="_blank" class="profile-link">
+                    View Full Profile
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- CANDIDATE B2-2: OSANDA -->
+    <div class="candidate-card">
+        <div class="card">
+            <div class="card-top">
+                <div class="card-identity">
+                    <div class="card-avatar">OW</div>
+                    <div>
+                        <div class="card-name">Osanda W.</div>
+                        <div class="card-title">Senior Software Engineer / Team Lead · Microservices · Sri Lanka</div>
+                    </div>
+                </div>
+                <div class="card-meta-right">
+                    <span class="card-location">Sri Lanka</span>
+                    <span class="card-salary">$5,000 / month</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="card-narrative">
+                    Osanda built and leads a microservices ecosystem handling <strong>100K+ transactions per minute at 99.9% uptime</strong>. He also cut deployment times by 80% through DevOps implementation and reduced technical debt by 40-60% through code analysis and review practices. The numbers are consistent across multiple roles — this is not a one-time result.
+                </p>
+                <p class="card-narrative">
+                    His identity integration experience is direct: <strong>Active Directory and Okta</strong> are in his stack, alongside Kafka for async event processing and Terraform/Kubernetes for infrastructure. He has led monolith-to-microservices migrations without business disruption, which is a specific skill ARC's platform work will require as the client list grows.
+                </p>
+                <p class="card-narrative">
+                    Sri Lanka is UTC+5:30, which makes Eastern overlap harder than LATAM candidates. His assessment noted some communication clarity gaps. Worth a call to evaluate fit — the technical depth is real, but the timezone and comms are honest considerations.
+                </p>
+                <div class="signal-row">
+                    <span class="signal-tag">Java / Spring Boot / Kotlin</span>
+                    <span class="signal-tag">Kafka / RabbitMQ</span>
+                    <span class="signal-tag">Active Directory + Okta</span>
+                    <span class="signal-tag">Kubernetes + Terraform</span>
+                    <span class="signal-tag">Golang / TypeScript</span>
+                    <span class="signal-tag blue">Prometheus + Grafana</span>
+                    <span class="signal-tag blue">GCP + AWS</span>
+                    <span class="signal-tag amber">Sri Lanka (UTC+5:30)</span>
+                </div>
+                <div class="card-stats">
+                    <div class="stat-box">
+                        <div class="stat-label">Experience</div>
+                        <div class="stat-value">10+ years</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Core Stack</div>
+                        <div class="stat-value">Java / Kafka / Kubernetes</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Key Differentiator</div>
+                        <div class="stat-value">AD/Okta + 100K TPS</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <span class="card-footer-note">High-throughput SaaS · Remote Sensing · DevOps</span>
+                <a href="https://profiles.candidate-profiles.com/osanda-w-sr-software-engineer-2026-03-04/" target="_blank" class="profile-link">
+                    View Full Profile
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- CANDIDATE B2-3: CARLOS -->
+    <div class="candidate-card">
+        <div class="card">
+            <div class="card-top">
+                <div class="card-identity">
+                    <div class="card-avatar">CM</div>
+                    <div>
+                        <div class="card-name">Carlos M.</div>
+                        <div class="card-title">Senior Software Engineer · Backend / IoT Integrations · Honduras</div>
+                    </div>
+                </div>
+                <div class="card-meta-right">
+                    <span class="card-location">Honduras</span>
+                    <span class="card-salary">$4,000 / month</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="card-narrative">
+                    Carlos spent 7+ years at Agrify Corp building the backend for a cannabis cultivation platform, which means he dealt with a very specific challenge: <strong>connecting IoT hardware (Raspberry Pi controllers, CO2 sensors, valves, lighting systems) to Java backend services over REST APIs in a regulated environment</strong>. That is a production integration problem with physical consequences if it breaks.
+                </p>
+                <p class="card-narrative">
+                    He also integrated the METRC API, a government-mandated cannabis tracking system with edge cases that require careful handling. His multi-tenant data flow work involved complex transformations across distributed systems with serverless AWS components. <strong>He understands what it means to own an integration end-to-end</strong>, not just write the client call.
+                </p>
+                <p class="card-narrative">
+                    Honduras is UTC-6, <strong>excellent overlap with US Eastern</strong>. His Kafka and Kubernetes depth is limited compared to heavier infrastructure profiles, but for a role focused on clean integration execution, he maps well.
+                </p>
+                <div class="signal-row">
+                    <span class="signal-tag">Java / Spring Boot</span>
+                    <span class="signal-tag">REST API design</span>
+                    <span class="signal-tag">IoT / embedded system integration</span>
+                    <span class="signal-tag">METRC API</span>
+                    <span class="signal-tag">Multi-tenant data flows</span>
+                    <span class="signal-tag blue">AWS (Lambda / EC2 / API Gateway)</span>
+                    <span class="signal-tag blue">PostgreSQL / SQL</span>
+                    <span class="signal-tag amber">Honduras (UTC-6)</span>
+                </div>
+                <div class="card-stats">
+                    <div class="stat-box">
+                        <div class="stat-label">Experience</div>
+                        <div class="stat-value">7+ years</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Core Stack</div>
+                        <div class="stat-value">Java / Spring Boot / AWS</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Key Differentiator</div>
+                        <div class="stat-value">IoT + regulated API integration</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <span class="card-footer-note">AgriTech · IoT · Regulated Environments</span>
+                <a href="https://profiles.candidate-profiles.com/carlos-m-sr-software-engineer-2026-03-04/" target="_blank" class="profile-link">
+                    View Full Profile
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- CANDIDATE B2-4: STEPHEN -->
+    <div class="candidate-card">
+        <div class="card">
+            <div class="card-top">
+                <div class="card-identity">
+                    <div class="card-avatar">SA</div>
+                    <div>
+                        <div class="card-name">Stephen A.</div>
+                        <div class="card-title">Senior Software Engineer · Fintech / Microservices · Nigeria</div>
+                    </div>
+                </div>
+                <div class="card-meta-right">
+                    <span class="card-location">Nigeria</span>
+                    <span class="card-salary">$4,500 / month</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="card-narrative">
+                    At Cellulant, Stephen's backend work contributed to a <strong>110% increase in company revenue across five countries</strong>. That is not a minor optimization — that is a platform that scaled fast and held together. At ProgressSoft, he reduced API response times by 15% on systems processing international transactions in real time.
+                </p>
+                <p class="card-narrative">
+                    His stack is squarely in the target zone: <strong>Java, Spring Boot, Kafka, RabbitMQ, Kubernetes, Docker</strong>. He specializes in high-volume, low-latency applications for mission-critical systems, which is the exact profile ARC's integration platform demands. He is building toward an architect role and brings the motivation that comes with that.
+                </p>
+                <p class="card-narrative">
+                    Nigeria is UTC+1, which means overlap with US Eastern requires shift flexibility. His OAuth and enterprise auth depth is limited compared to some others in this shortlist. The fintech execution track record is strong.
+                </p>
+                <div class="signal-row">
+                    <span class="signal-tag">Java 8+ / Spring Boot</span>
+                    <span class="signal-tag">Kafka / RabbitMQ</span>
+                    <span class="signal-tag">Kubernetes / Docker</span>
+                    <span class="signal-tag">REST APIs / Microservices</span>
+                    <span class="signal-tag">PostgreSQL</span>
+                    <span class="signal-tag blue">ProgressSoft · Cellulant</span>
+                    <span class="signal-tag amber">Nigeria (UTC+1)</span>
+                </div>
+                <div class="card-stats">
+                    <div class="stat-box">
+                        <div class="stat-label">Experience</div>
+                        <div class="stat-value">5 years</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Core Stack</div>
+                        <div class="stat-value">Java / Kafka / Kubernetes</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Key Differentiator</div>
+                        <div class="stat-value">Fintech scale + 5-country rollout</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <span class="card-footer-note">Fintech · International Payments · Microservices</span>
+                <a href="https://profiles.candidate-profiles.com/stephen-a-sr-software-engineer-2026-03-04/" target="_blank" class="profile-link">
+                    View Full Profile
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- CANDIDATE B2-5: ADEWALE -->
+    <div class="candidate-card">
+        <div class="card">
+            <div class="card-top">
+                <div class="card-identity">
+                    <div class="card-avatar">AA</div>
+                    <div>
+                        <div class="card-name">Adewale A.</div>
+                        <div class="card-title">Senior Software Engineer · Fintech / API Integration · Nigeria</div>
+                    </div>
+                </div>
+                <div class="card-meta-right">
+                    <span class="card-location">Nigeria</span>
+                    <span class="card-salary">$3,500 / month</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="card-narrative">
+                    Adewale has integrated <strong>over 30 third-party APIs</strong> across payment providers, credit bureaus, and identity verification services. Not as a curiosity — as a core part of his job at Access Corporation and Renmoney, where he maintains a lending platform serving <strong>5+ million active customers</strong>. He knows what it means to own an integration that breaks at 2am and has to be fixed before markets open.
+                </p>
+                <p class="card-narrative">
+                    His auth stack is production-hardened: <strong>Keycloak, JWT, Spring Security, row-level database security, rate limiting by tenant, and service-to-service API key auth</strong>. He built a loan decision engine while leading a team of 5 engineers, delivered 13 end-to-end integration projects at Stanbic IBTC Bank, and uses WireMock for contract testing before any integration ships.
+                </p>
+                <p class="card-narrative">
+                    Nigeria is UTC+1, which requires schedule flexibility for US overlap. At $3,500/month for someone with this integration depth and Keycloak experience, the value proposition is strong. One of the most integration-specific profiles in this entire batch.
+                </p>
+                <div class="signal-row">
+                    <span class="signal-tag">Java / Spring Boot</span>
+                    <span class="signal-tag">Keycloak / JWT / OAuth2</span>
+                    <span class="signal-tag">30+ API integrations</span>
+                    <span class="signal-tag">WireMock contract testing</span>
+                    <span class="signal-tag">Redis caching</span>
+                    <span class="signal-tag">Terraform + Kubernetes</span>
+                    <span class="signal-tag blue">PCI-DSS compliance</span>
+                    <span class="signal-tag blue">Renmoney · Stanbic IBTC</span>
+                    <span class="signal-tag amber">Nigeria (UTC+1)</span>
+                </div>
+                <div class="card-stats">
+                    <div class="stat-box">
+                        <div class="stat-label">Experience</div>
+                        <div class="stat-value">6+ years</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Core Stack</div>
+                        <div class="stat-value">Java / Keycloak / Spring Boot</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Key Differentiator</div>
+                        <div class="stat-value">30+ integrations + Keycloak depth</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <span class="card-footer-note">Lending · Banking · API-first Fintech</span>
+                <a href="https://profiles.candidate-profiles.com/adewale-a-sr-software-engineer-2026-03-04/" target="_blank" class="profile-link">
+                    View Full Profile
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- CANDIDATE B2-6: PETER -->
+    <div class="candidate-card">
+        <div class="card">
+            <div class="card-top">
+                <div class="card-identity">
+                    <div class="card-avatar">PA</div>
+                    <div>
+                        <div class="card-name">Peter A.</div>
+                        <div class="card-title">Backend Engineer · Real-time Systems / Fintech · Nigeria</div>
+                    </div>
+                </div>
+                <div class="card-meta-right">
+                    <span class="card-location">Nigeria</span>
+                    <span class="card-salary">$2,000 / month</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="card-narrative">
+                    Peter graduated in the <strong>top 5% of his Computer Science class with a 3.98 GPA</strong> and immediately started building real production systems. His gaming platform (Pick10Game) handled live sports predictions with real-time leaderboards, automated winning computations, and WebSocket chat — <strong>99.9% uptime during peak gaming hours</strong>. He also built a food delivery platform with payment gateway integration and a wellness POS system with Kafka and Spring Boot.
+                </p>
+                <p class="card-narrative">
+                    He has worked across industries fast: fintech, gaming, food delivery, wellness. Each project greenfield. Each one with real users. He builds with <strong>Domain-Driven Design</strong>, knows RabbitMQ for async processing, and has integrated Stripe, Paystack, and Monnify in production. His OAuth experience is limited, which is an honest gap to note.
+                </p>
+                <p class="card-narrative">
+                    At $2,000/month with this track record, he is the high-upside option in this batch. Four years in, with the instincts of someone who builds like problems have consequences. Give him a Principal Engineer to grow under and he will be a different engineer in six months.
+                </p>
+                <div class="signal-row">
+                    <span class="signal-tag">Java / Spring Boot</span>
+                    <span class="signal-tag">Node.js / TypeScript / NestJS</span>
+                    <span class="signal-tag">WebSocket / Real-time</span>
+                    <span class="signal-tag">RabbitMQ</span>
+                    <span class="signal-tag">Stripe / Paystack / Monnify</span>
+                    <span class="signal-tag">Domain-Driven Design</span>
+                    <span class="signal-tag blue">PostgreSQL / MongoDB / Redis</span>
+                    <span class="signal-tag amber">Nigeria (UTC+1)</span>
+                </div>
+                <div class="card-stats">
+                    <div class="stat-box">
+                        <div class="stat-label">Experience</div>
+                        <div class="stat-value">4 years</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Core Stack</div>
+                        <div class="stat-value">Java / Node.js / Spring Boot</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Key Differentiator</div>
+                        <div class="stat-value">High upside + multi-industry</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <span class="card-footer-note">Fintech · Gaming · Real-time Platforms</span>
+                <a href="https://profiles.candidate-profiles.com/peter-a-sr-software-engineer-hr78660-2026-03-04/" target="_blank" class="profile-link">
+                    View Full Profile
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- CANDIDATE B2-7: AMANUEL -->
+    <div class="candidate-card">
+        <div class="card">
+            <div class="card-top">
+                <div class="card-identity">
+                    <div class="card-avatar">AW</div>
+                    <div>
+                        <div class="card-name">Amanuel W.</div>
+                        <div class="card-title">Senior Software Engineer · M-PESA / Event-driven · Ethiopia</div>
+                    </div>
+                </div>
+                <div class="card-meta-right">
+                    <span class="card-location">Ethiopia</span>
+                    <span class="card-salary">$3,000 / month</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="card-narrative">
+                    Amanuel works on the <strong>M-PESA platform at Safaricom Ethiopia</strong>. That is one of the most operationally demanding mobile money systems in Africa, running at telecom scale with zero tolerance for failure. He built the Unified Business Portal handling agent and merchant registration for the platform, and designed an <strong>event-driven notification system using RabbitMQ</strong> specifically to prevent service failures when downstream dependencies go down.
+                </p>
+                <p class="card-narrative">
+                    His integration background spans SOAP-to-REST middleware conversion, SMS gateways, payment systems, Google Maps APIs, and USSD flows. He automated KYC data integration to eliminate manual entry errors, which is exactly the kind of clean, repeatable integration pattern ARC's client onboarding model requires. He also led a multi-tenant booking system built on Spring Boot from the ground up.
+                </p>
+                <p class="card-narrative">
+                    Ethiopia is UTC+3, which requires some schedule adjustment for US Eastern. His OAuth and enterprise auth depth (SAML, LDAP) is an area still developing. The telecom and payments infrastructure experience is the differentiator here.
+                </p>
+                <div class="signal-row">
+                    <span class="signal-tag">Java / Spring Boot</span>
+                    <span class="signal-tag">RabbitMQ event-driven</span>
+                    <span class="signal-tag">M-PESA / Telecom scale</span>
+                    <span class="signal-tag">SOAP to REST conversion</span>
+                    <span class="signal-tag">KYC automation</span>
+                    <span class="signal-tag">Multi-tenant architecture</span>
+                    <span class="signal-tag blue">Docker + Kubernetes + Jenkins</span>
+                    <span class="signal-tag amber">Ethiopia (UTC+3)</span>
+                </div>
+                <div class="card-stats">
+                    <div class="stat-box">
+                        <div class="stat-label">Experience</div>
+                        <div class="stat-value">8+ years</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Core Stack</div>
+                        <div class="stat-value">Java / Spring Boot / RabbitMQ</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Key Differentiator</div>
+                        <div class="stat-value">M-PESA telecom infrastructure</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <span class="card-footer-note">Telecom · Mobile Money · Enterprise Middleware</span>
+                <a href="https://profiles.candidate-profiles.com/amanuel-w-sr-software-engineer-2026-03-04/" target="_blank" class="profile-link">
+                    View Full Profile
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- CANDIDATE B2-8: VICTOR G. -->
+    <div class="candidate-card">
+        <div class="card">
+            <div class="card-top">
+                <div class="card-identity">
+                    <div class="card-avatar">VG</div>
+                    <div>
+                        <div class="card-name">Victor G.</div>
+                        <div class="card-title">Senior Engineer / Tech Lead · Fintech / Crypto · Guatemala</div>
+                    </div>
+                </div>
+                <div class="card-meta-right">
+                    <span class="card-location">Guatemala</span>
+                    <span class="card-salary">$5,500 / month</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="card-narrative">
+                    19 years of engineering, with stops at <strong>AlphaPoint (crypto trading), CHIVO Wallet (El Salvador's national Bitcoin wallet), and APEX trading platform</strong>. At AlphaPoint he improved trade execution latency by 60%. At CHIVO he modernized the codebase and built real-time WebSocket integrations for a government-scale deployment. He has operated in environments where the system going down is not a support ticket — it is a national incident.
+                </p>
+                <p class="card-narrative">
+                    His integration experience includes <strong>ETL pipelines, KYC with facial recognition, multi-country data centralization, and cross-system mapping</strong>. At Simagro, he built a centralized agricultural data platform integrating sources across multiple countries. He mentors teams, reviews architecture, and has the breadth of someone who has shipped production code across fintech, crypto, government, and enterprise sectors.
+                </p>
+                <p class="card-narrative">
+                    Guatemala puts him at UTC-6 with <strong>excellent US Eastern overlap</strong>. His Spring Boot-specific depth is less documented than his Java and Node.js work, which is worth clarifying in the technical interview. At $5,500/month, he is the senior-most option in this batch.
+                </p>
+                <div class="signal-row">
+                    <span class="signal-tag">Java / Node.js / .NET</span>
+                    <span class="signal-tag">WebSocket / Real-time</span>
+                    <span class="signal-tag">ETL pipelines</span>
+                    <span class="signal-tag">KYC + facial recognition</span>
+                    <span class="signal-tag">React / React Native</span>
+                    <span class="signal-tag blue">AlphaPoint · CHIVO Wallet</span>
+                    <span class="signal-tag blue">AWS</span>
+                    <span class="signal-tag amber">Guatemala (UTC-6)</span>
+                </div>
+                <div class="card-stats">
+                    <div class="stat-box">
+                        <div class="stat-label">Experience</div>
+                        <div class="stat-value">19 years</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Core Stack</div>
+                        <div class="stat-value">Java / Node.js / AWS</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Key Differentiator</div>
+                        <div class="stat-value">Crypto + Gov-scale deployment</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <span class="card-footer-note">Crypto · Fintech · Government Tech</span>
+                <a href="https://profiles.candidate-profiles.com/victor-g-sr-software-engineer-2026-03-04/" target="_blank" class="profile-link">
+                    View Full Profile
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- CANDIDATE B2-9: IKWUETO -->
+    <div class="candidate-card">
+        <div class="card">
+            <div class="card-top">
+                <div class="card-identity">
+                    <div class="card-avatar">IH</div>
+                    <div>
+                        <div class="card-name">Ikwueto H.</div>
+                        <div class="card-title">Senior Backend Engineer · Fintech / Payments · Nigeria</div>
+                    </div>
+                </div>
+                <div class="card-meta-right">
+                    <span class="card-location">Nigeria</span>
+                    <span class="card-salary">$3,500 / month</span>
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="card-narrative">
+                    Ikwueto built the MonieWorld FX remittance platform connecting the UK and Nigeria, scaled DOT agent banking systems serving thousands of field agents across Africa, and engineered APIs for <strong>Interswitch — one of Africa's largest payment processors — handling 5M+ users</strong>. He also built a high-security OTP service deployed across multiple major African banks. These are not edge cases in his career; they are the work itself.
+                </p>
+                <p class="card-narrative">
+                    His auth stack is one of the more complete in this batch: <strong>OAuth2, MFA, Active Directory integration, Keycloak, and service-to-service API key auth</strong>. He applies reactive programming for throughput (40% efficiency gain documented), uses circuit breakers and retry mechanisms on TCP-based APIs, and maintains 99.9% uptime on AWS. He has also led code reviews with SOLID and DRY as non-negotiables.
+                </p>
+                <p class="card-narrative">
+                    Nigeria is UTC+1, which requires shift flexibility for US Eastern hours. For integration-heavy work with real auth complexity, he is one of the strongest technical fits in the entire set of 18 candidates.
+                </p>
+                <div class="signal-row">
+                    <span class="signal-tag">Java / Spring Boot</span>
+                    <span class="signal-tag">OAuth2 + MFA + Active Directory</span>
+                    <span class="signal-tag">Keycloak</span>
+                    <span class="signal-tag">Kafka / Reactive programming</span>
+                    <span class="signal-tag">Circuit breakers + retry</span>
+                    <span class="signal-tag">Interswitch · MonieWorld</span>
+                    <span class="signal-tag blue">AWS / GCP / Kubernetes</span>
+                    <span class="signal-tag amber">Nigeria (UTC+1)</span>
+                </div>
+                <div class="card-stats">
+                    <div class="stat-box">
+                        <div class="stat-label">Experience</div>
+                        <div class="stat-value">8+ years</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Core Stack</div>
+                        <div class="stat-value">Java / Keycloak / Kafka</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-label">Key Differentiator</div>
+                        <div class="stat-value">OAuth2 + AD + payments at scale</div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <span class="card-footer-note">Payments · Remittance · Agent Banking</span>
+                <a href="https://profiles.candidate-profiles.com/ikwueto-h-sr-software-engineer-hr78660-2026-03-04/" target="_blank" class="profile-link">
+                    View Full Profile
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    </div><!-- /batch-2 -->
+
 </section>
 
     <!-- ===== MEET THE RECRUITING TEAM ===== -->
@@ -1468,6 +2107,15 @@
 
     <!-- ===== SCROLL ANIMATION ===== -->
     <script>
+        function switchBatch(n) {
+            document.getElementById('batch-1').style.display = n === 1 ? 'block' : 'none';
+            document.getElementById('batch-2').style.display = n === 2 ? 'block' : 'none';
+            document.getElementById('btn-batch-1').classList.toggle('active', n === 1);
+            document.getElementById('btn-batch-2').classList.toggle('active', n === 2);
+            // scroll to top of candidates section
+            document.querySelector('.candidates-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
